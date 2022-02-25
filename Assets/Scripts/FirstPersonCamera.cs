@@ -16,6 +16,7 @@ public class FirstPersonCamera : MonoBehaviour
     public float xRot; //rotation around the x-axis in degrees
     public float yRot; //rotation around the y-axis in degrees
 
+    [SerializeField] public float movementSpeed = 6f; 
     // Start is called before the first frame update
     void Start()
     {
@@ -46,8 +47,8 @@ public class FirstPersonCamera : MonoBehaviour
         Debug.Log("OnCameraLook");
         //reading the mouse deltas as a vector2 (delta x is the x component and delta y is the y component)
         Vector2 inputVector = values.Get<Vector2>();
-        deltaX = inputVector.x;// * Time.deltaTime;
-        deltaY = inputVector.y;// * Time.deltaTime;
+        deltaX = inputVector.x * (movementSpeed * Time.deltaTime);
+        deltaY = inputVector.y * (movementSpeed * Time.deltaTime);
 
     }
 }

@@ -2646,6 +2646,7 @@ MonoBehaviour:
   deltaY: 0
   xRot: 0
   yRot: 0
+  movementSpeed: 6
 --- !u!114 &279642741
 MonoBehaviour:
   m_ObjectHideFlags: 0
