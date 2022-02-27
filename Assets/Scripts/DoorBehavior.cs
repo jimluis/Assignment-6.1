@@ -52,8 +52,11 @@ public class DoorBehavior : MonoBehaviour
     {
         for(float i = 0; i <= 1f; i += step)
         {
+            //Lerp = linear interpolation
             Vector3 newPos = Vector3.Lerp(startPos, endPos, i);
             transform.position = newPos;
+
+            //makes the corouting pause until the next frame, unless we are returning a value
             yield return null;
         }
     }
